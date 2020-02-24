@@ -15,14 +15,14 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 4000
 
-app.use(cors());
-app.use('/graphql',(req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://shareyourgainz.herokuapp.com' );
-    res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    
-    next();
-})
+
+const corsOptions = {
+  origin: 'https://shareyourgainz.herokuapp.com/',
+  credentials : true
+}
+
+app.use(cors(corsOptions));
+
 
 
 
