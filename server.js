@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from'mongoose';
 import dotenv from 'dotenv';
 dotenv.config({path:'variables.env'}); 
-import cors from 'cors';
 import {ApolloServer} from'apollo-server-express';
 import Workout from './models/Workout';
 import {typeDefs} from './schema';
@@ -24,12 +23,7 @@ mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true })
 const app = express();
 const PORT = process.env.PORT || 4000
 
-const corsOptions = {
-  origin: 'https://shareyourgainz.herokuapp.com',
-  credentials : true
-}
 
-app.use(cors(corsOptions));
 
 const server = new ApolloServer({
     typeDefs,
