@@ -1,0 +1,11 @@
+@import '../../scss/config';
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity : 0.8;
+    background : $primary-color;
+    margin-top : 10rem;
+}

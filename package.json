@@ -1,0 +1,29 @@
+{
+  "name": "shareyourgainz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server",
+    "client": "cd client && npm start",
+    "heroku-postbuild" : "cd client && npm install && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "apollo-server": "^2.10.0",
+    "apollo-server-express": "^2.10.0",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.12",
+    "nodemon": "^2.0.2",
+    "sass": "^1.25.0"
+  }
+}

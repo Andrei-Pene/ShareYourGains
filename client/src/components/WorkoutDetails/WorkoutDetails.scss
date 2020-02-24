@@ -1,0 +1,64 @@
+@import '../../scss/utilities.scss';
+@import '../../scss/_config.scss';
+
+
+  
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 4.5rem;
+    
+    
+  
+    .workout-top {
+      display: flex;
+      flex-direction: column;
+      align-items : center;
+      text-align: center;
+      padding : 1rem;
+      
+      
+  
+      img {
+        width: 100%;
+        height: 50rem;
+        
+        
+        
+      }
+
+      .title {
+        color : #fff;
+      }
+
+    }
+
+    .workout-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items : center;
+      padding : 1rem;
+
+      p {
+        
+          font-size : 2rem;
+          line-height: 1.2;
+          margin-bottom : 1rem;
+      
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        
+        button {
+            margin-right : 1rem;
+        }
+
+      }
+
+      
+  }
+}

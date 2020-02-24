@@ -1,0 +1,100 @@
+@import './config';
+.container {
+    
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
+  
+  // Text Styles
+  .x-large {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .large {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-primary {
+    color: $primary-color;
+  }
+  
+  .round-img {
+    border-radius: 50%;
+  }
+  
+  .line {
+    height: 1px;
+    background: #ccc;
+    margin: 1.5rem 0;
+  }
+  
+  // Backgrounds
+  .bg {
+    &-primary {
+      @include set-background($primary-color);
+    }
+    &-light {
+      @include set-background($light-color);
+      border: #ccc 1px solid;
+    }
+    &-dark {
+      @include set-background($dark-color);
+    }
+    &-success {
+      @include set-background($success-color);
+    }
+    &-danger {
+      @include set-background($danger-color);
+    }
+    &-white {
+      @include set-background(#fff);
+      border: #ccc 1px solid;
+    }
+  }
+
+  .dark-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .custom-button {
+    min-width: 165px;
+    width: auto;
+    height: 3.5rem;
+    letter-spacing: 0.2rem;
+    line-height: 2rem;
+    padding: 0 35px 0 35px;
+    font-size: 1rem;
+    background-color:$dark-color;
+    color: $light-color;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border: 2px solid $light-color;
+  
+    &:hover {
+      background-color: $light-color;
+      color: black;
+      border: 1px solid $dark-color;
+    }
+  }
