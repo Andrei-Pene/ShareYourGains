@@ -5,7 +5,8 @@ dotenv.config({path:'variables.env'});
 import {ApolloServer} from'apollo-server-express';
 import Workout from './models/Workout';
 import {typeDefs} from './schema';
-import {resolvers} from './resolvers';
+import {resolvers} from './resolvers'
+import cors from 'cors';
 
 const path = require('path');
 
@@ -21,6 +22,8 @@ mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true })
 
 
 const app = express();
+app.use(cors());
+
 const PORT = process.env.PORT || 4000
 
 
