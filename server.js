@@ -6,6 +6,7 @@ import {ApolloServer} from'apollo-server-express';
 import Workout from './models/Workout';
 import {typeDefs} from './schema';
 import {resolvers} from './resolvers'
+import cors from 'cors';
 
 
 const path = require('path');
@@ -14,6 +15,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 4000
 
+app.use(cors());
 app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://shareyourgainz.herokuapp.com' );
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
