@@ -15,7 +15,7 @@ const path = require('path');
 
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true })
 .then(()=> console.log('db connected'))
 .catch(err => console.error(err))
 
