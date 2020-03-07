@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 
-const Workout = new mongoose.Schema({
+const workoutSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true
@@ -27,4 +27,4 @@ const Workout = new mongoose.Schema({
 
 });
 
-export default mongoose.model('workout',Workout);
+export default mongoose.model('workout',workoutSchema);

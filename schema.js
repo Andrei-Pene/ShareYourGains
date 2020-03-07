@@ -17,6 +17,11 @@ export const typeDefs = gql`
         imgUrl : String!
 
     }
+
+    input SignUpSignInInput {
+        email : String!
+        password : String!
+    }
     
     type Workout {
         id : ID!
@@ -24,12 +29,27 @@ export const typeDefs = gql`
         category : String!
         workoutWalkthrough : String!
         imgUrl : String!
+        author : User!
 
+    }
+
+    type User {
+        id : ID!
+        email : String!
+        password : String!
+        workouts : [Workout]!
+
+    }
+
+    type AuthUser {
+        token : String!
+        user : User!
     }
 
     type Query {
         getAllWorkouts : [Workout!]!
         getOneWorkout(id : ID!) : Workout!
+        getUser : User!
         
 
     }
@@ -37,7 +57,9 @@ export const typeDefs = gql`
     type Mutation {
         addWorkout(input: WorkoutInput!) : Workout!
         editWorkout(input : UpdateWorkoutInput!) : Workout!
-        deleteWorkout(id: ID!) : Workout!
+        deleteWorkout(id: ID!) : Workout! 
+        signup(input : SignUpSignInInput) : AuthUser!
+        signin(input : SignUpSignInInput) : AuthUser!
 
     }
     
