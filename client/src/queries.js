@@ -11,6 +11,9 @@ const WORKOUT_FIELDS = gql`
 
 `
 
+
+
+
 export const ALL_WORKOUTS = gql`
     query getAllWorkouts {
         results : getAllWorkouts {
@@ -30,6 +33,17 @@ export const ONE_WORKOUT = gql`
 
     }
     ${WORKOUT_FIELDS}
+`
+export const USER = gql`
+    query getUser {
+         user : getUser {
+            id
+            displayName
+            email
+        }
+
+    }
+    
 `
 
 

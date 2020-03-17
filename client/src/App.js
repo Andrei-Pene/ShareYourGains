@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 import WorkoutShowcase from './components/WorkoutShowcase/WorkoutShowcase';
 import WorkoutDetails from './components/WorkoutDetails/WorkoutDetails';
-
+import SignInAndSignUp from './components/SignInAndSignUp/SignInAndSignUp';
 
 
  const App = () => {
@@ -16,6 +16,8 @@ import WorkoutDetails from './components/WorkoutDetails/WorkoutDetails';
             <Route exact path='/' component={HomePage} />
             <Route path='/WorkoutShowcase/:id' component={WorkoutDetails} />
             <Route exact path='/WorkoutShowcase' component={WorkoutShowcase} />
+            <Route exact path='/SignInAndSignUp' component={SignInAndSignUp} />
+
             
           </Switch>
           

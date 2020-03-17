@@ -2,13 +2,13 @@ import jwt from 'jsonwebtoken';
 import {config} from './config';
 import User from './models/User';
 
-export const createToken = ({id}) => jwt.sign({id}, config.secretOrKey);
+export const createToken = ({id,displayName}) => jwt.sign({id,displayName}, config.secretOrKey);
 
 
 export const getUserFromToken = token => {
   try {
     const user = jwt.verify(token, config.secretOrKey)
-    return User.findOne({id: user.id})
+    return User.findOne({displayName: user.displayName})
   } catch (e) {
     return null
   }

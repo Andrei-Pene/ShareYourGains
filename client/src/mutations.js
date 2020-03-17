@@ -11,6 +11,7 @@ const WORKOUT_FIELDS = gql`
 
 `
 
+
 export const ADD_WORKOUT = gql`
     mutation CreateWorkout($newWorkout : WorkoutInput!) {
         addWorkout(input: $newWorkout) {
@@ -35,4 +36,31 @@ export const EDIT_WORKOUT = gql`
         }
     }
     ${WORKOUT_FIELDS}
+`
+
+export const CREATE_USER = gql`
+    mutation CreateUser($newUser : SignUpInput!) {
+        signup(input: $newUser) {
+            user {
+                id
+                displayName
+                email
+            }
+            token
+    }
+}
+    
+`
+export const LOGIN_USER = gql`
+    mutation LoginUser($currentUser : SignInInput!) {
+         result: signin(input: $currentUser) {
+            user {
+                id
+                displayName
+                email
+                }   
+            token
+        }   
+}
+    
 `

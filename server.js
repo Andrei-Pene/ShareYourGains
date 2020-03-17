@@ -50,17 +50,14 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     context({req}) {
-      const token = req.headers.authorization;
-      const user = getUserFromToken(token);
+      const token = req.headers.authorization || '';
+      const userr = getUserFromToken(token);
         return {
           Workout,
           User,
           createToken,
-          user
+          userr
         }
-
-        
-        
       }
     }
     

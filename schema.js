@@ -18,7 +18,13 @@ export const typeDefs = gql`
 
     }
 
-    input SignUpSignInInput {
+    input SignUpInput {
+        email : String!
+        password : String!
+        displayName : String!
+    }
+
+    input SignInInput {
         email : String!
         password : String!
     }
@@ -35,21 +41,21 @@ export const typeDefs = gql`
 
     type User {
         id : ID!
+        displayName : String!
         email : String!
-        password : String!
-        workouts : [Workout]!
+        workouts : [Workout]
 
     }
 
     type AuthUser {
         token : String!
-        user : User!
+        user : User
     }
 
     type Query {
         getAllWorkouts : [Workout!]!
         getOneWorkout(id : ID!) : Workout!
-        getUser : User!
+        getUser : User
         
 
     }
@@ -58,8 +64,8 @@ export const typeDefs = gql`
         addWorkout(input: WorkoutInput!) : Workout!
         editWorkout(input : UpdateWorkoutInput!) : Workout!
         deleteWorkout(id: ID!) : Workout! 
-        signup(input : SignUpSignInInput) : AuthUser!
-        signin(input : SignUpSignInInput) : AuthUser!
+        signup(input : SignUpInput!) : AuthUser!
+        signin(input : SignInInput!) : AuthUser!
 
     }
     

@@ -12,8 +12,8 @@ export const resolvers = {
         return singleWorkout;
 
       },
-      getUser : (_,__,{user}) => {
-        return user;
+      getUser : (_,__,{userr}) => {
+        return userr;
       }
 
     },
@@ -62,8 +62,8 @@ export const resolvers = {
   },
 
   User : {
-    workouts : async(root, _, {Workout,user}) => {
-      if(root.id !== user.id) {
+    workouts : async(root, _, {Workout,userr}) => {
+      if(root.id !== userr.id) {
         throw new Error('user not authorized')
       }
       const userWorkouts = await Workout.find({id: root.id}).exec();

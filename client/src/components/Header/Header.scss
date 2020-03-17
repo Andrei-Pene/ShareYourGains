@@ -24,14 +24,19 @@
         display: flex;
         justify-content: flex-end;
         color: $primary-color;
-        padding-right: 2rem;
+        margin-right: 2rem;
+        
     
     .option-item {
         text-decoration: none;
-        padding-right: 0.5rem;
+        margin-right : 1rem;
         color: $primary-color;
         }
-    }   
+    
+    }
+    
+
+    
   
     
 
